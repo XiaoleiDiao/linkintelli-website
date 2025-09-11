@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="sticky top-0 z-50 bg-slate-950/60 backdrop-blur border-b border-slate-800">
           <div className="container-pad flex items-center h-16 justify-between">
             <Link href="/" className="flex items-center gap-2">
-              <img src="/logo.png" alt="Logo" className="h-7 w-7" />
+              <img src="/logo.svg" alt="Logo" className="h-20 w-20" />
               <span className="font-semibold">LinkIntelli Technology</span>
             </Link>
             <nav className="flex items-center gap-6 text-sm">
