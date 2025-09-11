@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b1020;
+  --card: #0f172a;
+  --text: #e2e8f0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(1200px 800px at 20% -10%, rgba(14,165,233,.15), transparent),
+              radial-gradient(1000px 600px at 80% 10%, rgba(56,189,248,.1), transparent),
+              var(--bg);
+  color: var(--text);
+}
+
+.container-pad {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+.card {
+  @apply bg-slate-900/60 backdrop-blur rounded-2xl shadow-lg border border-slate-800;
+}
+
+.prose :where(a):not(:where([class~=not-prose] *)) {
+  @apply text-brand no-underline;
+}
