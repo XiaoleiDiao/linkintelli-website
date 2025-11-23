@@ -6,8 +6,8 @@ export async function GET() {
 <rss version="2.0">
   <channel>
     <title>LinkIntelli Technology</title>
-    <link>${site}</link>
-    <description>AI Technology Solutions for Healthcare and Robotics</description>
+    <link>${site}/zh</link>
+    <description>人工智能技术解决方案 - 医疗健康与机器人领域</description>
   </channel>
 </rss>`;
   return new NextResponse(xml, { headers: { "Content-Type": "application/rss+xml; charset=utf-8" }});

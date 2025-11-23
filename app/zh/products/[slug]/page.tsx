@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getProductBySlug } from "@/data/products_en";
+import { getProductBySlug } from "@/data/products";
 
 export async function generateStaticParams() {
-  const { getAllProducts } = await import("@/data/products_en");
+  const { getAllProducts } = await import("@/data/products");
   return getAllProducts().map(p => ({ slug: p.slug }));
 }
 
@@ -24,7 +24,7 @@ function getIcon(iconType: string) {
   return null;
 }
 
-export default function ProductDetail({ params }: { params: { slug: string } }) {
+export default function ProductDetailZH({ params }: { params: { slug: string } }) {
   const product = getProductBySlug(params.slug);
   if (!product) return notFound();
 
@@ -32,11 +32,11 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
     <div className="space-y-16">
       {/* Back Navigation */}
       <div>
-        <Link href="/products" className="inline-flex items-center text-brand hover:underline">
+        <Link href="/zh/products" className="inline-flex items-center text-brand hover:underline">
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Products
+          返回产品页
         </Link>
       </div>
 
@@ -64,9 +64,9 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
       {/* Core Features */}
       <section>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Core Features</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">核心功能</h2>
           <p className="text-lg text-slate-300">
-            Comprehensive capabilities designed to deliver exceptional results
+            全面的能力设计，致力于提供卓越的结果
           </p>
         </div>
         
@@ -90,9 +90,9 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
       {/* Use Cases */}
       <section>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Use Cases</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">适用场景</h2>
           <p className="text-lg text-slate-300">
-            Practical applications across diverse industries and scenarios
+            跨越多个行业和场景的实际应用
           </p>
         </div>
         
@@ -113,9 +113,9 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
       {/* Product Values */}
       <section>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Product Value</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">产品价值</h2>
           <p className="text-lg text-slate-300">
-            Measurable impact and benefits for your organization
+            为您的组织带来可衡量的影响和收益
           </p>
         </div>
         
@@ -136,16 +136,16 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
       {/* Call to Action */}
       <section className="text-center py-16 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl">
         <div className="max-w-2xl mx-auto px-8">
-          <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+          <h2 className="text-3xl font-bold mb-6">准备开始了吗？</h2>
           <p className="text-lg text-slate-300 mb-8">
-            Let&apos;s discuss how {product.name} can be tailored to your specific requirements.
+            让我们讨论如何根据您的具体需求定制 {product.name}。
           </p>
           <div className="flex items-center justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 rounded-xl bg-brand hover:bg-brand-dark transition shadow-lg">
-              Contact Sales Team
+            <Link href="/zh/contact" className="px-8 py-4 rounded-xl bg-brand hover:bg-brand-dark transition shadow-lg">
+              联系销售团队
             </Link>
-            <Link href="/products" className="px-8 py-4 rounded-xl border border-slate-700 hover:border-brand transition">
-              Explore Other Products
+            <Link href="/zh/products" className="px-8 py-4 rounded-xl border border-slate-700 hover:border-brand transition">
+              探索其他产品
             </Link>
           </div>
         </div>

@@ -1,29 +1,38 @@
-export const metadata = {
-  title: "关于我们 – Your Company",
-};
+export const metadata = { title: "About – LinkIntelli Technology" };
 
 export default function About() {
   return (
     <div className="prose prose-invert max-w-none">
-      <h1>关于我们</h1>
-      <p>
-        Your Company 致力于为企业客户提供端到端数字化解决方案，
-        包括数据平台、API 服务、人工智能与自动化集成等。
-      </p>
-      <h2>我们的愿景</h2>
-      <p>让技术真正服务业务增长。</p>
-      <h2>核心团队</h2>
-      <ul>
-        <li>创始人 &amp; CEO – 张三（前某知名科技公司）</li>
-        <li>CTO – 李四（云原生与AI专家）</li>
-        <li>交付负责人 – 王五（大型企业级项目经验）</li>
-      </ul>
-      <h2>我们的价值</h2>
-      <ul>
-        <li>客户成功优先</li>
-        <li>数据驱动决策</li>
-        <li>安全与隐私设计先行</li>
-      </ul>
+
+            {/* Company Introduction */}
+      <section className="py-16">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">About LinkIntelli Technology</h2>
+          <p className="text-lg text-slate-300 leading-relaxed mb-6">
+            LinkIntelli Technology LTD is an innovative company focused on artificial intelligence technology solutions. 
+            We concentrate on two core areas: <span className="text-brand font-semibold">AI for Healthcare</span> and <span className="text-brand font-semibold">Embodied AI</span>.
+          </p>
+          <p className="text-lg text-slate-300 leading-relaxed">
+            We believe that the value of AI lies not only in technological breakthroughs, but also in driving industry 
+            efficiency improvements, enhancing human capabilities, and truly improving quality of life.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-brand to-cyan-400 bg-clip-text text-transparent tracking-tight mb-6">
+            
+            <span className="block">Exploring the Future,</span>
+            <span className="block pb-1">Starting Today.</span>
+          </h2>
+          <div className="h-1 w-24 bg-brand mx-auto rounded-full opacity-80"></div>
+        </div>
+      </section>
+
+
+
+
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { getAllProducts } from "@/data/products_en";
+import { getAllProducts } from "@/data/products";
 
-export const metadata = { title: "Products & Services – LinkIntelli Technology" };
+export const metadata = { title: "产品与服务 – LinkIntelli Technology" };
 
 function getIcon(iconType: string) {
   if (iconType === "heart") {
@@ -20,7 +20,7 @@ function getIcon(iconType: string) {
   return null;
 }
 
-export default function Products() {
+export default function ProductsZH() {
   const products = getAllProducts();
   
   return (
@@ -28,17 +28,17 @@ export default function Products() {
       {/* Header */}
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          Our <span className="bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">Products</span>
+          我们的<span className="bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent">产品</span>
         </h1>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-          Innovative AI solutions designed to transform healthcare and robotics through advanced technology and intelligent automation.
+          通过先进技术和智能自动化，设计创新的AI解决方案，致力于变革医疗健康和机器人领域。
         </p>
       </div>
 
       {/* Products Grid */}
       <div className="grid lg:grid-cols-2 gap-8">
         {products.map((product, index) => (
-          <Link key={product.slug} href={`/products/${product.slug}`} className="group">
+          <Link key={product.slug} href={`/zh/products/${product.slug}`} className="group">
             <div className="card p-8 hover:border-brand/60 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-brand/10 h-full">
               {/* Header */}
               <div className="flex items-start justify-between mb-6">
@@ -76,7 +76,7 @@ export default function Products() {
 
               {/* Quick Features Preview */}
               <div className="space-y-4">
-                <h3 className="font-semibold text-white">Key Capabilities:</h3>
+                <h3 className="font-semibold text-white">核心能力：</h3>
                 <div className="grid grid-cols-1 gap-2">
                   {product.features.slice(0, 3).map((feature, idx) => (
                     <div key={idx} className="flex items-start space-x-2">
@@ -87,7 +87,7 @@ export default function Products() {
                   {product.features.length > 3 && (
                     <div className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-slate-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm text-slate-400">+{product.features.length - 3} more capabilities</span>
+                      <span className="text-sm text-slate-400">+{product.features.length - 3} 项更多能力</span>
                     </div>
                   )}
                 </div>
@@ -96,9 +96,9 @@ export default function Products() {
               {/* Action indicator */}
               <div className="mt-8 pt-6 border-t border-slate-700">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-400">Learn more about this solution</span>
+                  <span className="text-sm text-slate-400">了解更多此解决方案</span>
                   <span className="text-brand font-medium group-hover:translate-x-1 transition-transform duration-300">
-                    Explore Details →
+                    查看详情 →
                   </span>
                 </div>
               </div>
@@ -110,16 +110,16 @@ export default function Products() {
       {/* Call to Action */}
       <div className="text-center py-12">
         <div className="max-w-2xl mx-auto">
-          <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Business?</h3>
+          <h3 className="text-2xl font-bold mb-4">准备好变革您的业务了吗？</h3>
           <p className="text-slate-300 mb-6">
-            Get in touch to learn how our AI solutions can be customized for your specific needs.
+            联系我们，了解我们的AI解决方案如何为您的特定需求进行定制化。
           </p>
           <div className="flex items-center justify-center gap-4">
-            <Link href="/contact" className="px-6 py-3 rounded-xl bg-brand hover:bg-brand-dark transition shadow">
-              Contact Sales
+            <Link href="/zh/contact" className="px-6 py-3 rounded-xl bg-brand hover:bg-brand-dark transition shadow">
+              联系销售
             </Link>
-            <Link href="/about" className="px-6 py-3 rounded-xl border border-slate-700 hover:border-brand transition">
-              About Us
+            <Link href="/zh/about" className="px-6 py-3 rounded-xl border border-slate-700 hover:border-brand transition">
+              关于我们
             </Link>
           </div>
         </div>
